@@ -1,0 +1,208 @@
+/* ---------------INICIO--------------- */
+
+.dark_color {
+    background-color: black;
+}
+
+.text {
+    color:white
+}
+.body {
+    background-color: rgb(240, 248, 255);
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    
+}
+
+.title_style {
+    background-color: #0193eb;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+
+.productsBorders {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+@media (max-width:767px) {
+    .custom-img {
+        
+        max-width: 50%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .custom-img-nosotros {
+        max-width: 80%;
+    }
+    .custom-img-secciones {
+        max-width: 90%;
+    }
+    .custom-img-navidad {
+        max-width: 100%;
+    }
+    
+    }
+
+@media (min-width:768px) {
+    .custom-img {
+            
+        max-width: 70%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .custom-img-nosotros {
+        max-width: 60%;
+    }
+    .custom-img-secciones {
+        max-width: 70%;
+    }
+    .custom-img-navidad {
+        max-width: 90%;
+    }
+   
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+    
+    .body {
+        min-height: 100%; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+    footer {
+        margin-top: auto; 
+        
+    }
+    
+    #cart {
+        position: absolute;
+        top: 125px; 
+        right: 10px;
+        background-color: #333; 
+        padding: 10px;
+        display: none; 
+        width: 200px;
+        z-index: 1; 
+    }
+    
+    .cart_ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: white;
+    }
+    
+    .cart_li {
+        margin-bottom: 10px;
+    }
+    
+    .cart_h2, .cart_button {
+        color: white; 
+    }
+
+    .cart_button {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    #checkout-form-container {
+        position: fixed; 
+        top: 105px; 
+        right: 10px; 
+        width: 90%; 
+        max-width: 300px; 
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        z-index: 10;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: none;
+    }
+
+/* ---------------SOBRE NOSOTROS--------------- */
+
+.hx_font {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.h2_nosotros {
+    font-size: 2rem;
+    color: #256db4;
+    margin-bottom: 2%;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text_nosotros {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.h3_sucursales {
+    font-size: 1.8rem;
+    color: #256db4;
+    margin-bottom: 3%;
+}
+
+.ul_sucursales {
+    list-style-type: none;
+    padding: 0;
+}
+
+.li_sucursales {
+    font-size: 1rem;
+    margin-bottom: 1%;
+    color: #333;
+}
+
+
+/* ---------------contactos--------------- */
+
+.section_contactos {
+    background-color: azure;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color:azure;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #256db4;
+}
+
+
+
+

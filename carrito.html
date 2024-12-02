@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Carrito</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="smartcart/dist/css/smart_cart.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="smartcart/dist/js/jquery.smartCart.min.js"></script>
+</head>
+
+
+<body>
+        <div class="container">
+            <h1>Your Cart</h1>
+            <!-- Cart Form -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="POST">
+                <div id="smartcart"></div>
+                <!-- PayPal Info -->
+                <input name="business" value="YOUR-PAYPAL-EMAIL-HERE" type="hidden">
+                <input name="currency_code" value="USD" type="hidden">
+                <input name="return" value="http://www.yourdomain.com/yoursuccessurl" type="hidden">
+                <input name="cancel_return" value="http://www.yourdomain.com/yourcancelurl" type="hidden">
+                <input name="cmd" value="_cart" type="hidden">
+                <input name="upload" value="1" type="hidden">
+            </form>
+        </div>
+
+    <script>
+        $(document).ready(function () {
+            // Recuperar los elementos del carrito desde localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Inicializar SmartCart con los elementos recuperados
+            $('#smartcart').smartCart({
+                cartItems: cartItems,
+                submitSettings: {
+                    submitType: 'paypal' // Puedes cambiarlo si usas otro método
+                }
+            });
+
+            // Actualizar localStorage cuando el carrito cambia
+            $('#smartcart').on('itemAdded', function (e, product) {
+                console.log('Producto añadido:', product);
+                const currentCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+                currentCart.push(product);
+                localStorage.setItem('cartItems', JSON.stringify(currentCart));
+            });
+
+            $('#smartcart').on('itemRemoved', function (e, product) {
+                console.log('Producto eliminado:', product);
+                const currentCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+                const updatedCart = currentCart.filter(item => item.product_id !== product.product_id);
+                localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+            });
+
+            $('#smartcart').on('cartCleared', function () {
+                console.log('Carrito limpiado');
+                localStorage.removeItem('cartItems');
+            });
+        });
+    </script>
+</body>
+
+</html>

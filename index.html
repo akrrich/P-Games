@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Inicio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="smartcart/dist/css/smart_cart.min.css">
+    
+    <link rel="icon" href="Imagenes/logotipo.jpg" type="image/x-icon">
+
+</head>
+
+<body class="body">
+    <div class="container-fluid pt-5">
+        <div class="row pt-5">
+            <header class="navbar navbar-expand-md navbar-light dark_color fixed-top"> 
+                <div class="container-fluid d-flex justify-content-between align-items-center">
+                    
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="Imagenes/logotipo.jpg" alt="Logotipo" height="100" width="100">
+                        <h1 class="ms-2 mb-0 text-light hx_font">PGames</h1>
+                    </a>
+            
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="Imagenes/iconos/326618_form_icon.png" alt="Menú" width="30" height="30">
+                    </button>
+            
+                    
+                    <div class="collapse navbar-collapse text-light" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item hx_font" href="productos.html#juegos">Juegos</a></li>
+                                    <li><a class="dropdown-item hx_font" href="productos.html#ediciones">Ediciones coleccionistas</a></li>
+                                    <li><a class="dropdown-item hx_font" href="productos.html#merchandising">Merchandising</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#" id="cart-icon"><img src="Imagenes/iconos/326700_cart_shopping_icon.png" alt="carrito"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="contacto.html"><img src="Imagenes/iconos/326670_mail_icon.png" alt="contactanos"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="SobreNosotros.html"><img src="Imagenes/iconos/326659_info_icon (1).png" alt="nosotros"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="cart" class="cart-container" style="display:none;">
+                        <h2 class="cart_h2">Carrito de Compras</h2>
+                        <ul id="cart-items" class="cart_ul" ></ul>
+                        <button class="cart_button" id="checkout-btn">Pagar</button>
+                        <button class="cart_button"id="clear-cart">Vaciar Carrito</button>
+                    </div>
+                    <div id="checkout-form-container" style="display: none; margin-top: 20px;">
+                        <h3 class="cart_h2">Detalles de Compra</h3>
+                        <form id="checkout-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required 
+                                       pattern="[A-Za-záéíóúÁÉÍÓÚÑñ ]+" title="Solo letras son permitidas" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="card" class="form-label">Tarjeta</label>
+                                <input type="text" class="form-control" id="card" placeholder="Número de tarjeta" maxlength="16" required 
+                                       pattern="^\d{16}$" title="El número de tarjeta debe ser de 16 dígitos" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="address" placeholder="Dirección completa" required />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Confirmar Compra</button>
+                        </form>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <!--carousel-->
+
+    <div class="owl-carousel owl-theme container-fluid pt-3 px-5 pt-5">
+        <div><a href="productos.html#ediciones"> <img src="Imagenes/productos/ce/SLIDER-elden-ring-shadow-of-the-erdtree-edition-collector-et-standard-article-blog-1024x614.jpg" alt="" class="img-fluid"></a></div>
+        <div><a href="productos.html#ediciones"><img src="Imagenes/productos/ce/SLIDER-persona-3-reload-collector-aigis-v1.jpg" alt="" class="img-fluid"></a></div>
+        <div><a href="productos.html#ediciones"><img src="Imagenes/productos/ce/Switch_TLOZ_TOTK_Bundle_02-scaled-e1709671351305.jpg" alt="" class="img-fluid"></a></div>
+    </div>
+
+    <!--Mas comprados-->
+    <section>
+        <div class="container-fluid">
+        <div class="row pt-5 p-5">
+
+            <div>
+                <h2 class=" col-12 title_style hx_font">Videojuegos más vendidos</h2>
+            </div>
+            
+            <section class="container-fluid">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="sc-product-item text-center mb-4">
+                            <img data-name="product_image" src="Imagenes/productos/juegos/battlefront_juego.jpg"  class="card-img-top custom-img" alt="Battlefront">
+                            <h4 data-name="product_name">Battlefront</h4>
+                            <p data-name="product_desc">acción y aventura</p>
+                            <input name="product_price" value="39.99" type="hidden" />
+                            <input name="product_id" value="1" type="hidden" />
+                            <button class="sc-add-to-cart btn btn-success">Agregar al carrito</button>
+                        </div>
+                    </div>
+            
+                    <div class="col">
+                        <div class="sc-product-item text-center mb-4">
+                            <img data-name="product_image" src="Imagenes/productos/juegos/halo_collection_juego.jpg"  class="card-img-top custom-img" alt="Fallout">
+                            <h4 data-name="product_name">Halo Collection</h4>
+                            <p data-name="product_desc">acción y disparos</p>
+                            <input name="product_price" value="49.99" type="hidden"/>
+
+                            <input name="product_id" value="2" type="hidden" />
+                            <button class="sc-add-to-cart btn btn-success">Agregar al carrito</button>
+                        </div>
+                    </div>
+            
+                    <div class="col">
+                        <div class="sc-product-item text-center mb-4">
+                            <img data-name="product_image" src="Imagenes/productos/juegos/minecraft_juego.jpg"  class="card-img-top custom-img" alt="God of War">
+                            <h4 data-name="product_name">minecraft</h4>
+                            <p data-name="product_desc">construccion y exploracion</p>
+                            <input name="product_price" value="59.99" type="hidden" />
+                            <input name="product_id" value="3" type="hidden" />
+                            <button class="sc-add-to-cart btn btn-success">Agregar al carrito</button>
+                        </div>
+                    </div>
+            
+                    <div class="col">
+                        <div class="sc-product-item text-center mb-4">
+                            <img data-name="product_image" src="Imagenes/productos/juegos/dstrilogy_juego.jpg"  class="card-img-top custom-img" alt="Mario RPG">
+                            <h4 data-name="product_name">dark souls trilogy</h4>
+                            <p data-name="product_desc">Aventura epica y acción</p>
+                            <input name="product_price" value="29.99$" type="hidden" />
+                            <input name="product_id" value="4" type="hidden" />
+                            <button class="sc-add-to-cart btn btn-success">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    </section>
+
+    <!--ediciones coleccionistas-->
+    <section>
+        <div class="container-fluid">
+        <div class="row pt-5 px-5 ">
+            <div class="col-12">
+                <h2 class=" title_style hx_font">Secciones</h2>
+            </div>
+            <div class="col-12 d-flex align-items-center productsBorders">
+                
+                <a href="productos.html"><img class="custom-img-secciones" src="Imagenes/productos/merch/mario-merch.jpg" alt="Dark Souls Compendium"></a>
+                
+                
+                <div>
+                    <h3 class="hx_font">Productos</h3>
+                    <p>
+                        Explora nuestro variado catálogo de productos, que incluye desde libros de arte conceptual hasta videojuegos físicos para diversas plataformas. Si te interesa, este es el lugar.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12 d-flex align-items-center productsBorders mt-4">
+                
+               <a href="SobreNosotros.html" class="custom-img-nosotros"><img class="custom-img-nosotros" src="Imagenes/nosotros2.jpg"  alt="Jovenes"></a>
+                
+                <div >
+                    <h3 class="hx_font">nosotros</h3>
+                    <p>
+                        Si quieres saber cómo un grupo de chicos cansados de los precios inflados y la baja disponibilidad dio origen a este emprendimiento, este es el lugar
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 d-flex align-items-center productsBorders mt-4">
+                
+               <a href="contacto.html"><img class="custom-img-secciones" src="Imagenes/megafono.png" alt="megafono"></a>
+                
+               
+                <div>
+                    <h3 class="hx_font">contáctanos</h3>
+                    <p>
+                        Si deseas que escuchemos tus opiniones, críticas o solicitudes, podrás hacerlo a través de nuestros métodos de comunicación, aquí."                    
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!--compra navidad-->
+    <section>
+        <div class="container-fluid">
+        <div class="row pt-5 px-5 text-center " >
+
+            <div>
+                <h2 class="col-12 title_style hx_font">Esta navidad</h2>
+            </div>
+            <div class="">
+            <a href="productos.html#ediciones"><img class="card-img-top custom-img-navidad" src="Imagenes/productos/Edicion_Collecionista.png" alt="elegi tu regalo ideal"></a>
+            </div>
+            
+            
+        </div>
+    </div>
+    </section>
+
+    <!--opniones clientes-->
+   <div class="container-fluid">
+        <div class="row px-5">
+            <h2 class="col-12 title_style hx_font mt-4">Opiniones de nuestros clientes</h2>
+        </div>
+        <div class="owl-carousel owl-theme container-fluid pt-3 px-5">
+            <div><img src="Imagenes/clientes/review1.png" alt="opinion de cliente Raul" class="img-fluid max-width: 100% height:auto"></a></div>
+            <div><img src="Imagenes/clientes/review2.png" alt="opinion de cliente Juan" class="img-fluid max-width: 100% height:auto"></a></div>
+            <div><img src="Imagenes/clientes/review3.png" alt="opinion de cliente Ferir" class="img-fluid max-width: 100% height:auto"></a></div>
+            <div><img src="Imagenes/clientes/review4.png" alt="opinion de cliente Delfina" class="img-fluid max-width: 100% height:auto"></a></div>
+            
+        </div>
+    </div>
+     
+ 
+ 
+
+
+    <footer>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 dark_color">
+              
+                <div class="row">
+                    <div class="ps-5 col-6 d-flex justify-content-end align-items-center">
+                        <img class="logo" src="Imagenes/logotipo.jpg" alt="" height="100" width="100">
+                        <h3 class="d-inline text-light">P-Games</h3>
+                    </div>
+    
+                    
+                    <div class="col-6 d-flex justify-content-start align-items-center ps-5">
+                       <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Des_LA"> <img src="Imagenes/redes sociales/Facebook.png" alt="logo facebook" class="mx-2"></a>
+                       <a href="https://www.instagram.com/"><img src="Imagenes/redes sociales/Instagram.png" alt="logo instagram" class="mx-2"></a> 
+                        <a href="https://x.com/?lang=es"><img src="Imagenes/redes sociales/X.png" alt="logo X" class="mx-2"></a>
+                    </div>
+                </div>
+    
+                <div class="col-12 d-flex justify-content-center text-light">
+                    <p>© 2024 P-Games</p>
+                </div>
+                <p class="text">Lucas Luna, Alesio Rojas, Santiago Rodriguez, diseño web 2024</p>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <!--javaScript-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <script src="smartcart/dist/js/jquery.smartCart.min.js" ></script>  
+    <script>
+        $(document).ready(function () 
+        {
+            $(".owl-carousel").owlCarousel({
+                responsive: {
+                    0: {
+                        items: 1,
+                        loop: true,
+                        center: true,
+                        nav: true
+                    },
+                    650: {
+                        items: 2,
+                        loop: true,
+                        nav: true
+                    },
+                    990: {
+                        items: 3,
+                        loop: true,
+                        margin: 10
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function () {
+        let cart = [];
+
+        $('.sc-add-to-cart').click(function () {
+            let productName = $(this).closest('.sc-product-item').find('h4').text();
+            let productPrice = $(this).closest('.sc-product-item').find('input[name="product_price"]').val();
+            let productImg = $(this).closest('.sc-product-item').find('img').attr('src');
+            
+            let product = { name: productName, price: productPrice, img: productImg };
+            cart.push(product);
+            updateCart();
+        });
+
+        function updateCart() {
+            $('#cart-items').empty();
+            cart.forEach(function(product) {
+                $('#cart-items').append(`
+                    <li class="cart_li">
+                        <img src="${product.img}" alt="${product.name}" width="50">
+                        <span>${product.name}</span> - $<span>${product.price}</span>
+                    </li>
+                `);
+            });
+        }
+
+        $('#cart-icon').click(function (e) {
+            e.preventDefault();
+            $('#navbarNav').collapse('hide');
+            $('#cart').toggle(); 
+        });
+
+        $('#clear-cart').click(function () {
+            cart = [];
+            updateCart();
+            $('#checkout-form-container').hide();
+        });
+
+        $('#checkout-btn').click(function () {
+            if (cart.length > 0) {
+                $('#checkout-form-container').show();
+            } else {
+                alert("El carrito está vacío. Agrega productos antes de pagar.");
+            }
+        });
+
+        $('#checkout-form').submit(function (e) {
+            e.preventDefault();
+            alert('¡Compra realizada con éxito! Gracias por tu compra.');
+            $('#checkout-form-container').hide();
+            cart = [];
+            updateCart();
+        });
+
+
+            
+            $('#navbarNav').on('show.bs.collapse', function () {
+                $('#cart').hide();
+            });
+        });
+    
+    </script>
+
+</body>
+
+</html>
+
+
